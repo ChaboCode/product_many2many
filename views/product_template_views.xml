@@ -12,6 +12,28 @@
         <field name="part_ids" widget="many2many_tags"
           invisible="catalog_section != 'machine'" />
       </xpath>
+      <xpath expr="//notebook" position="inside">
+        <page string="Refacciones y servicios" name="compat_parts"
+          invisible="catalog_section != 'machine'">
+          <field name="part_ids" nolabel="1"
+            context="{'default_catalog_section': 'spare'}">
+            <list>
+              <field name="name" string="Refacción / Servicio" />
+              <field name="catalog_section" string="Tipo" />
+              <field name="default_code" string="Referencia interna" />
+              <field name="list_price" string="Precio" />
+            </list>
+            <form>
+              <group>
+                <field name="name" />
+                <field name="catalog_section" />
+                <field name="default_code" />
+                <field name="list_price" />
+              </group>
+            </form>
+          </field>
+        </page>
+      </xpath>
     </field>
   </record>
 </odoo>
