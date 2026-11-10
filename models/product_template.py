@@ -27,5 +27,5 @@ class ProductTemplate(models.Model):
     column1='machine_id',
     column2='part_id',
     string='Refacciones y aditamentos',
-    domain=[('catalog_section', '=', ['spare', 'extra', 'service'])]
+    domain=[('catalog_section', 'in', ['spare', 'extra', 'service'])]
   )
